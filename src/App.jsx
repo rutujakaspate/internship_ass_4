@@ -1,28 +1,29 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
-import Sidebar from './Components/Sidebar'
-import Dashboard from './Pages/Dashboard'
-import Tables from './Pages/Tables'
-import Charts from './Pages/Charts'
-import Calendar from './Pages/Calendar'
-import Kanban from './Pages/Kanban'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Sidebar from "./Components/Sidebar";
+import Home from "./Pages/Home";
+import Search from "./Pages/Search";
+import Albums from "./Pages/Albums";     
+import Playlists from "./Pages/Playlists"; 
+import Genres from "./Pages/Genres";     
 
 function App() {
   return (
     <Router>
-      <div style={{ display: 'flex' }}>
+      <div className="flex min-h-screen">
         <Sidebar />
-        <main style={{ flex: 1, padding: '20px' }}>
+        <main className="flex-1 p-5 bg-black text-white min-h-screen">
           <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/tables" element={<Tables />} />
-            <Route path="/charts" element={<Charts />} />
-            <Route path="/calendar" element={<Calendar />} />
-            <Route path="/kanban" element={<Kanban />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/albums" element={<Albums />} />
+            <Route path="/playlists" element={<Playlists />} />
+            <Route path="/genres" element={<Genres />} />
           </Routes>
         </main>
       </div>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;
